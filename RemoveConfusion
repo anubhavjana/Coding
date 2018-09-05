@@ -1,0 +1,38 @@
+s='ABCERKR'
+if(s==s[::-1]):
+    print("Already a palindrome")
+s=list(s)
+s1=list(s)
+l=len(s)
+front=0
+rear=l-1
+if(s[front]!=s[rear]):
+    s1.insert(front+1,s[rear])
+    s1.append(s[front])
+    count=2
+else:
+    count=0
+front=front+1
+rear=rear-1
+i=1
+j=2
+while(front<rear):
+    if(s[front]!=s[rear]):
+        frontnew=front+i
+        rearnew=len(s1)-j
+        s1.insert(frontnew+1,s[rear])
+        s1.insert(rearnew+1,s[front])
+        front=front+1
+        rear=rear-1
+        i=i+1
+        j=j+2
+        count=count+2
+    else:
+        front=front+1
+        rear=rear-1
+        j=j+1
+
+    
+print(''.join(s1))
+print(count)
+
