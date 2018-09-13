@@ -1,0 +1,21 @@
+end=ord('Z')
+d=4
+s='zello'
+s1=""
+for i in s.upper():
+    if(((ord(i)%end)+d)>end):
+        res=((ord(i)%end)+d)-26
+        res=chr(res)
+        s1=s1+res
+    elif(ord(i)==90):
+        res=ord(i)+d-26
+        res=chr(res)
+        s1=s1+res
+    else:
+        res=((ord(i)%end)+d)
+        res=chr(res)
+        s1=s1+res
+print(s1)
+
+        
+    
